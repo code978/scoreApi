@@ -10,19 +10,7 @@ connectdb()
 
 
 app.use('/',require('./routes/index'))
-
-app.get('/highest_Score',async (req,res)=>{
-
-    const data={
-        'Round_1 ':'10',
-        'Round_2 ':'20',
-        'Round_3 ':'30',
-    }
-
-    res.json(data);
-
-})
-
+app.use('/highscore',require('./routes/highestScore'))
 
 app.listen(port,(req,res)=>{
     console.log(`port is running on locahost: ${port}`)
